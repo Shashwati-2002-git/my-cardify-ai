@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cardify AI</title>
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/summarise.css">
+  <link rel="stylesheet" href="../css/footer.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header"></div>
+  
+  <main class="login-container">
+
+    <div class="workspace">
+
+    <!-- LEFT -->
+    <div class="left-panel">
+        <button onclick="triggerUpload()">Upload a Document</button>
+        <button onclick="goToLinkSummary()">Paste a Link</button>
+        <button onclick="goToTextSummary()">Paste a Text</button>
+    </div>
+
+    <!-- MIDDLE -->
+    <div class="middle-panel">
+
+        <div class="summary-box" id="summary">
+        <ul id="summaryList">
+            <li>Summarised points will appear here...</li>
+        </ul>
+        </div>
+
+        <div class="upload-box">
+            <label class="upload-label">
+                <span class="upload-icon">📎</span>
+                <span class="placeholder" id="fileName">Upload a document</span>
+                <input type="file" id="fileInput" accept=".txt,.pdf" hidden>
+            </label>
+
+            <button class="send-btn" onclick="sendDocument()">Send</button>
+        </div>
+
+    </div>
+
+    <!-- RIGHT -->
+    <div class="right-panel">
+        <button onclick="goToCardify()">Cardify</button>
+        <button onclick="goToQuiz()">Take a Quiz</button>
+        <button>Save</button>
+    </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div id="footer"></div>
+
+    <script src="../js/include.js"></script>
+    <script src="../js/summarise.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
+    <script>
+        pdfjsLib.GlobalWorkerOptions.workerSrc =
+            "https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.worker.min.js";
+    </script>
+
+</body>
+</html>

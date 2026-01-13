@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cardify AI – Text Summary</title>
+
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/summarise.css">
+  <link rel="stylesheet" href="../css/footer.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <main class="login-container">
+    <div class="workspace">
+
+      <!-- LEFT -->
+      <div class="left-panel">
+        <button onclick="goToSummarise()">Upload a Document</button>
+        <button onclick="goToLinkSummary()">Paste a Link</button>
+        <button>Paste a Text</button>
+      </div>
+
+      <!-- MIDDLE -->
+      <div class="middle-panel">
+
+        <div class="summary-box">
+          <ul id="summaryList">
+            <li>Summarised points will appear here...</li>
+          </ul>
+        </div>
+
+        <div class="upload-box">
+          <div class="upload-label link-label">
+            <span class="upload-icon">📎</span>
+            <input type="text" id="textInput" placeholder="Paste your text here"/>
+          </div>
+
+          <button class="send-btn" onclick="sendText()">Send</button>
+        </div>
+
+      </div>
+
+      <!-- RIGHT -->
+      <div class="right-panel">
+        <button onclick="goToCardify()">Cardify</button>
+        <button onclick="goToQuiz()">Take a Quiz</button>
+        <button>Save</button>
+      </div>
+
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <script src="/js/include.js"></script>
+  <script src="/js/text-summary.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cardify AI | Sign Up</title>
+
+  <link rel="stylesheet" href="../css/header.css" />
+  <link rel="stylesheet" href="../css/login.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+</head>
+<body>
+
+  <div id="header"></div>
+
+  <main class="login-container">
+
+    <div class="login-image-section">
+        <div class="image-placeholder">
+            <img src="../images/logo.png" alt="Cardify AI Logo">
+        </div>
+    </div>
+
+    <div class="login-form-section">
+      <form id="signupForm" class="login-form">
+
+        <input type="email" id="email" placeholder="Email" required />
+        <input type="password" id="password" placeholder="Password" required />
+        <input type="password" id="confirmPassword" placeholder="Confirm Password" required />
+
+        <button type="submit" class="login-btn">Create Account</button>
+
+        <button type="button" class="secondary-btn" onclick="location.href='/login'">
+          Already have an account?
+        </button>
+
+        <button type="button" class="link-btn" onclick="location.href='/forgot-password'">
+          Forgot Password?
+        </button>
+
+        <p id="message" class="success-text"></p>
+
+      </form>
+    </div>
+
+  </main>
+
+  <div id="footer"></div>
+
+  <script src="../js/include.js"></script>
+
+  <!-- Firebase Signup Logic -->
+  <script type="module" src="../js/firebase-signup.js"></script>
+
+</body>
+</html>

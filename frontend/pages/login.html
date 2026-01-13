@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Cardify AI | Login</title>
+
+  <link rel="stylesheet" href="../css/header.css" />
+  <link rel="stylesheet" href="../css/login.css" />
+  <link rel="stylesheet" href="../css/footer.css" />
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <main class="login-container">
+
+    <!-- Left Section -->
+    <div class="login-image-section">
+      <div class="image-placeholder">
+        <img src="../images/logo.png" alt="Cardify AI Logo" />
+      </div>
+    </div>
+
+    <!-- Right Section -->
+    <div class="login-form-section">
+      <form id="loginForm" class="login-form">
+
+        <input
+          type="email"
+          id="email"
+          placeholder="Email"
+          required
+        />
+
+        <input
+          type="password"
+          id="password"
+          placeholder="Password"
+          required
+        />
+
+        <button type="submit" class="login-btn">Log In</button>
+
+        <button type="button" class="secondary-btn" onclick="location.href='/signup'">
+          Create an Account
+        </button>
+
+        <button type="button" class="link-btn" onclick="location.href='/forgot-password'">
+          Forgot Password?
+        </button>
+
+        <p id="message" class="success-text"></p>
+
+      </form>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <script src="../js/include.js"></script>
+  <script type="module" src="../js/firebase-login.js"></script>
+
+</body>
+</html>

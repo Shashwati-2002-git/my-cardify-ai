@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>My Cardify AI – Cards</title>
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/cardify.css">
+  <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/chatbot.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <main class="cardify-container">
+
+    <!-- Cards Section -->
+    <div class="cards-wrapper" id="cardsWrapper">
+      <!-- Cards will be dynamically inserted here -->
+    </div>
+
+    <!-- Right Actions -->
+    <div class="actions-panel">
+      <button class="action-btn" id="saveBtn">Save</button>
+      <button class="action-btn" id="quizBtn">Take a Quiz</button>
+      <button class="action-btn" id="clearBtn">Clear Cards</button>
+    </div>
+
+  </main>
+
+  <div id="chatbot-container"></div>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <script src="../js/include.js"></script>
+  <script src="../js/cardify.js"></script>
+  <script>
+    if (!window.chatbotLoaded) {
+      window.chatbotLoaded = true;
+
+      fetch("/partials/chatbot.html")
+        .then(res => res.text())
+        .then(html => {
+          document.body.insertAdjacentHTML("beforeend", html);
+
+          const script = document.createElement("script");
+          script.src = "/js/chatbot.js";
+          script.onload = () => window.initChatbot();
+          document.body.appendChild(script);
+        });
+    }
+  </script>
+
+</body>
+</html>
