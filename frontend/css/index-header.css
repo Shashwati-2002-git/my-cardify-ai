@@ -1,6 +1,6 @@
 /* Header Styling */
 .site-header {
-  background-color: #3e4b23;
+  background-color: #3e4b23; /* dark olive green */
   color: white;
   padding: 12px 24px;
   display: flex;
@@ -8,7 +8,6 @@
   align-items: center;
 }
 
-/* Logo */
 .logo-section {
   display: flex;
   align-items: center;
@@ -26,32 +25,15 @@
   font-weight: bold;
 }
 
-/* Right section */
-.profile-section {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-  position: relative;
-}
-
-/* Home text */
-.home-text {
-  font-size: 16px;
-  font-weight: 600;
-  cursor: pointer;
-  color: white;
-}
-
-.home-text:hover {
-  opacity: 0.85;
-}
-
-/* Profile pic */
 .profile-pic {
   width: 40px;
   height: 40px;
   border-radius: 50%;
   cursor: pointer;
+}
+
+.profile-section {
+  position: relative;
 }
 
 /* Dropdown menu */
@@ -63,7 +45,7 @@
   color: #333;
   border-radius: 8px;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-  width: 140px;
+  width: 120px;
   display: none;
   z-index: 1000;
 }
@@ -76,8 +58,5 @@
 
 .profile-menu-item:hover {
   background-color: #f2f2f2;
-}
-
-.profile-menu-item + .profile-menu-item {
-  border-top: 1px solid #eee;
+  border-radius: 8px;
 }

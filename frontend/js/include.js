@@ -1,16 +1,14 @@
-// Load an HTML partial into a target element
 async function loadComponent(id, file) {
-  try {
-    const res = await fetch(file);
-    if (!res.ok) throw new Error(`Failed to load ${file}`);
-    const html = await res.text();
-    document.getElementById(id).innerHTML = html;
-  } catch (err) {
-    console.error(err);
-  }
+  const res = await fetch(file);
+  const html = await res.text();
+  document.getElementById(id).innerHTML = html;
 }
 
-// Adjust paths according to your folder structure
-// Pages are in frontend/pages/, header/footer are in same folder
-loadComponent("header", "../partials/header.html");
-loadComponent("footer", "../partials/footer.html");
+// Header
+loadComponent("header", "/partials/header.html").then(async () => {
+  const module = await import("/js/header.js");
+  module.initHeader();
+});
+
+// Footer
+loadComponent("footer", "/partials/footer.html");

@@ -1,10 +1,27 @@
 <header class="site-header">
   <div class="logo-section">
-    <img src="../images/logo.png" alt="Cardify AI Logo" class="logo">
+    <img src="/images/logo.png" alt="Cardify AI Logo" class="logo">
     <span class="site-name">Cardify AI</span>
   </div>
 
   <div class="profile-section">
-    <img src="../images/profile.jpg" alt="Profile" class="profile-pic">
+    <!-- Home text button -->
+    <span class="home-text" id="home-btn">Home</span>
+
+    <!-- Profile image -->
+    <img
+      src="/images/profile.jpg"
+      alt="Profile"
+      class="profile-pic"
+      id="profile-icon"
+    />
+
+    <!-- Dropdown menu -->
+    <div class="profile-menu" id="profile-menu">
+      <div class="profile-menu-item" id="logout-btn">Logout</div>
+      <div class="profile-menu-item" id="notes-btn">My Notes</div>
+    </div>
   </div>
 </header>
+
+<script type="module" src="/js/header.js"></script>
