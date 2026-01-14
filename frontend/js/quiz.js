@@ -82,10 +82,19 @@ function submitQuiz() {
       `input[name="q${index}"]:checked`
     );
 
-    if (selected && selected.value === q.correctAnswer) {
+    if (!selected) return;
+
+    const correctLetter = String(q.correctAnswer)
+      .trim()
+      .charAt(0)
+      .toUpperCase();
+
+    if (selected.value === correctLetter) {
       score++;
     }
   });
 
   scoreBox.textContent = `Total Score: ${score} / 10`;
 }
+
+window.submitQuiz = submitQuiz;

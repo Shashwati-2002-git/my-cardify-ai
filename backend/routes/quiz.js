@@ -3,7 +3,6 @@ import express from "express";
 import "dotenv/config";
 
 const router = express.Router();
-
 const GEMINI_API_KEY = process.env.GEMINI_API_KEY;
 
 // ----------------------------
@@ -34,8 +33,9 @@ Rules:
 - 4 options only (A, B, C, D)
 - One correct answer
 
-Return ONLY valid JSON in this format:
+Return ONLY a JSON ARRAY. No explanation. No markdown.
 
+FORMAT:
 [
   {
     "question": "",
@@ -66,22 +66,33 @@ ${points.map(p => `- ${p}`).join("\n")}
 
     const data = await response.json();
 
-    let rawText =
+    const rawText =
       data?.candidates?.[0]?.content?.parts?.[0]?.text;
 
     if (!rawText) {
-      return res
-        .status(500)
-        .json({ error: "Quiz generation failed" });
+      console.error("❌ Empty Gemini response");
+      return res.status(500).json({ error: "Quiz generation failed" });
     }
 
-    // Clean Gemini markdown
-    const cleanedText = rawText
-      .replace(/```json/g, "")
-      .replace(/```/g, "")
-      .trim();
+    console.log("🧠 Raw Gemini response:\n", rawText);
 
-    const quiz = JSON.parse(cleanedText);
+    // ----------------------------
+    // SAFELY EXTRACT JSON
+    // ----------------------------
+    const jsonMatch = rawText.match(/\[\s*{[\s\S]*}\s*\]/);
+
+    if (!jsonMatch) {
+      console.error("❌ Invalid JSON from Gemini");
+      return res.status(500).json({ error: "Invalid quiz format" });
+    }
+
+    const quiz = JSON.parse(jsonMatch[0]);
+
+    if (!Array.isArray(quiz) || quiz.length !== 10) {
+      return res.status(500).json({
+        error: "Quiz must contain exactly 10 questions"
+      });
+    }
 
     res.json({ quiz });
 
