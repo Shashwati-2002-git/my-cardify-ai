@@ -39,10 +39,30 @@
   font-size: 14px;
 }
 
-#chatbot-input {
-  border: none;
+#chatbot-input-container {
+  display: flex;
   border-top: 1px solid #ddd;
+}
+
+#chatbot-input {
+  flex: 1;
+  border: none;
   padding: 10px;
   outline: none;
-  border-radius: 0 0 12px 12px;
+  font-size: 14px;
+  border-radius: 0 0 0 12px;
+}
+
+#chatbot-send {
+  background: #3d5a40;
+  color: white;
+  border: none;
+  padding: 0 16px;
+  cursor: pointer;
+  font-size: 16px;
+  border-radius: 0 0 12px 0;
+}
+
+#chatbot-send:hover {
+  background: #2f4733;
 }

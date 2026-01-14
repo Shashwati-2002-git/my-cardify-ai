@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="/css/header.css" />
   <link rel="stylesheet" href="/css/summarise.css" />
   <link rel="stylesheet" href="/css/footer.css" />
+  <link rel="stylesheet" href="/css/chatbot.css" />
 </head>
 
 <body>
@@ -48,6 +49,8 @@
     </div>
   </main>
 
+  <div id="chatbot-container"></div>
+
   <div id="saveDialog" class="save-dialog hidden">
     <div class="dialog-box">
       <h3>Name your summary</h3>
@@ -65,6 +68,22 @@
   <script src="/js/include.js"></script>
   <script src="/js/link-summary.js"></script>
   <script type="module" src="/js/saveSummary.js"></script>
+  <script>
+    if (!window.chatbotLoaded) {
+      window.chatbotLoaded = true;
+
+      fetch("/partials/chatbot.html")
+        .then(res => res.text())
+        .then(html => {
+          document.body.insertAdjacentHTML("beforeend", html);
+
+          const script = document.createElement("script");
+          script.src = "/js/chatbot.js";
+          script.onload = () => window.initChatbot();
+          document.body.appendChild(script);
+        });
+    }
+  </script>
 
 </body>
 </html>

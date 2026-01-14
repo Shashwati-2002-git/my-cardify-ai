@@ -96,7 +96,7 @@ function submitQuiz() {
 
     if (!selected) {
       feedbackEl.textContent =
-        `Wrong option. The correct option is ${correctLetter}.`;
+        `No option selected. The correct option is ${correctLetter}.`;
       feedbackEl.className = "feedback wrong";
       return;
     }
@@ -107,7 +107,7 @@ function submitQuiz() {
       feedbackEl.className = "feedback correct";
     } else {
       feedbackEl.textContent =
-        `Wrong answer. The correct option is ${correctLetter}`;
+        `Wrong answer. The correct option is ${correctLetter}.`;
       feedbackEl.className = "feedback wrong";
     }
   });

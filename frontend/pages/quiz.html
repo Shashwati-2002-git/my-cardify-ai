@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../css/header.css">
   <link rel="stylesheet" href="../css/quiz.css">
   <link rel="stylesheet" href="../css/footer.css">
+  <link rel="stylesheet" href="../css/chatbot.css">
 </head>
 
 <body>
@@ -30,10 +31,28 @@
 
   </main>
 
+  <div id="chatbot-container"></div>
+
   <div id="footer"></div>
 
   <script src="../js/include.js"></script>
   <script src="../js/quiz.js"></script>
+  <script>
+    if (!window.chatbotLoaded) {
+      window.chatbotLoaded = true;
+
+      fetch("/partials/chatbot.html")
+        .then(res => res.text())
+        .then(html => {
+          document.body.insertAdjacentHTML("beforeend", html);
+
+          const script = document.createElement("script");
+          script.src = "/js/chatbot.js";
+          script.onload = () => window.initChatbot();
+          document.body.appendChild(script);
+        });
+    }
+  </script>
 
 </body>
 </html>
