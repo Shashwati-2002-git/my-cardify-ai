@@ -1,18 +1,7 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
-import { getAuth, signInWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
-
-/* Firebase config (SAFE to expose) */
-const firebaseConfig = {
-  apiKey: "AIzaSyApCQg1RTi7Dw--PIuvO1576PSiglYXawI",
-  authDomain: "cardify-ai-4511a.firebaseapp.com",
-  projectId: "cardify-ai-4511a",
-  storageBucket: "cardify-ai-4511a.firebasestorage.app",
-  messagingSenderId: "1052786706458",
-  appId: "1:1052786706458:web:d77d4ae6282eadbfe9e9a3"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+import { auth } from "./firebase.js";
+import {
+  signInWithEmailAndPassword
+} from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
 
 const loginForm = document.getElementById("loginForm");
 const message = document.getElementById("message");

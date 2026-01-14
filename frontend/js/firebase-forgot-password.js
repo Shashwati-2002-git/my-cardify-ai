@@ -1,18 +1,7 @@
-import { initializeApp } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-app.js";
-import { getAuth, sendPasswordResetEmail } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
-
-/* Firebase config (safe to expose) */
-const firebaseConfig = {
-  apiKey: "AIzaSyApCQg1RTi7Dw--PIuvO1576PSiglYXawI",
-  authDomain: "cardify-ai-4511a.firebaseapp.com",
-  projectId: "cardify-ai-4511a",
-  storageBucket: "cardify-ai-4511a.firebasestorage.app",
-  messagingSenderId: "1052786706458",
-  appId: "1:1052786706458:web:d77d4ae6282eadbfe9e9a3"
-};
-
-const app = initializeApp(firebaseConfig);
-const auth = getAuth(app);
+import { auth } from "./firebase.js";
+import {
+  sendPasswordResetEmail
+} from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
 
 const resetForm = document.getElementById("resetForm");
 const message = document.getElementById("message");
@@ -37,16 +26,15 @@ resetForm.addEventListener("submit", async (e) => {
     }, 2000);
 
   } catch (error) {
+    message.style.color = "red";
+
     if (error.code === "auth/user-not-found") {
-      message.style.color = "red";
       message.textContent = "No account found with this email.";
     } 
     else if (error.code === "auth/invalid-email") {
-      message.style.color = "red";
       message.textContent = "Invalid email address.";
     } 
     else {
-      message.style.color = "red";
       message.textContent = "Something went wrong. Please try again.";
     }
 

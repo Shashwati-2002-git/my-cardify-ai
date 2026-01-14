@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Cardify AI – Saved Summaries</title>
+
+  <link rel="stylesheet" href="../css/header.css">
+  <link rel="stylesheet" href="../css/summarise.css">
+  <link rel="stylesheet" href="../css/footer.css">
+</head>
+
+<body>
+
+  <!-- Header -->
+  <div id="header"></div>
+
+  <main class="login-container">
+
+    <div class="workspace">
+
+      <!-- LEFT PANEL -->
+      <div class="left-panel" id="summaryListPanel">
+        <h3 class="panel-title">My Summaries</h3>
+        <ul id="savedSummaryList"></ul>
+      </div>
+
+      <!-- MIDDLE PANEL -->
+      <div class="middle-panel">
+        <div class="summary-box">
+          <ul id="summaryContent">
+            <li>Select a summary to view its content</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- RIGHT PANEL -->
+      <div class="right-panel">
+        <button onclick="cardifyCurrent()">Cardify</button>
+        <button onclick="quizCurrent()">Take a Quiz</button>
+        <button onclick="openRenameDialog()">Rename Notes</button>
+        <button class="danger" onclick="openDeleteDialog()">Delete Notes</button>
+      </div>
+
+    </div>
+
+    <!-- RENAME DIALOG -->
+    <div id="renameDialog" class="save-dialog hidden">
+      <div class="dialog-box">
+        <h3>Rename Summary</h3>
+        <input type="text" id="newSummaryTitle" placeholder="New name">
+        <div class="dialog-actions">
+          <button onclick="confirmRename()">Rename</button>
+          <button onclick="closeRenameDialog()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- DELETE DIALOG -->
+    <div id="deleteDialog" class="save-dialog hidden">
+      <div class="dialog-box">
+        <h3>Delete this summary?</h3>
+        <p>This action cannot be undone.</p>
+        <div class="dialog-actions">
+          <button class="danger" onclick="confirmDelete()">Delete</button>
+          <button onclick="closeDeleteDialog()">Cancel</button>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <script src="../js/include.js"></script>
+  <script type="module" src="../js/save-summary.js"></script>
+
+</body>
+</html>

@@ -55,16 +55,21 @@ function renderQuiz() {
 
     div.innerHTML = `
       <p class="question">${index + 1}. ${q.question}</p>
-      ${Object.entries(q.options)
-        .map(
-          ([key, value]) => `
-            <label>
-              <input type="radio" name="q${index}" value="${key}">
-              ${key}. ${value}
-            </label>
-          `
-        )
-        .join("")}
+
+      <div class="options">
+        ${Object.entries(q.options)
+          .map(
+            ([key, value]) => `
+              <label>
+                <input type="radio" name="q${index}" value="${key}">
+                ${key}. ${value}
+              </label>
+            `
+          )
+          .join("")}
+      </div>
+
+      <p class="feedback" id="feedback-${index}"></p>
     `;
 
     quizArea.appendChild(div);
@@ -82,15 +87,28 @@ function submitQuiz() {
       `input[name="q${index}"]:checked`
     );
 
-    if (!selected) return;
+    const feedbackEl = document.getElementById(`feedback-${index}`);
 
     const correctLetter = String(q.correctAnswer)
       .trim()
       .charAt(0)
       .toUpperCase();
 
+    if (!selected) {
+      feedbackEl.textContent =
+        `Wrong option. The correct option is ${correctLetter}`;
+      feedbackEl.className = "feedback wrong";
+      return;
+    }
+
     if (selected.value === correctLetter) {
       score++;
+      feedbackEl.textContent = "Correct answer. Well done!";
+      feedbackEl.className = "feedback correct";
+    } else {
+      feedbackEl.textContent =
+        `Wrong answer. The correct option is ${correctLetter}`;
+      feedbackEl.className = "feedback wrong";
     }
   });
 

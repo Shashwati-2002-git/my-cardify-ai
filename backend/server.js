@@ -84,6 +84,10 @@ app.get("/link-summary", (req, res) => {
   res.sendFile(path.join(pagesPath, "link-summary.html"));
 });
 
+app.get("/save-summary", (req, res) => {
+  res.sendFile(path.join(pagesPath, "save-summary.html"));
+});
+
 // Catch-all 404 for unknown routes
 app.use((req, res) => {
   res.status(404).send("Page not found");

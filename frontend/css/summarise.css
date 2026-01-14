@@ -270,3 +270,49 @@ body {
     transform: scale(1);
   }
 }
+
+.panel-title {
+  font-size: 16px;
+  margin-bottom: 10px;
+  color: #2f4f2f;
+}
+
+.left-panel ul {
+  list-style: none;
+  padding: 0;
+}
+
+.left-panel li {
+  padding: 10px;
+  margin-bottom: 8px;
+  background: #eef3ea;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.left-panel li.active {
+  background: #6b8e23;
+  color: white;
+}
+
+.summary-box {
+  background: #f8faf7;
+  border-radius: 16px;
+  padding: 20px;
+  height: 100%;
+  overflow-y: auto;
+}
+
+.summary-box ul {
+  list-style: disc;
+  padding-left: 20px;
+}
+
+.right-panel button {
+  margin-bottom: 12px;
+}
+
+.right-panel .danger {
+  background: #c0392b;
+  color: white;
+}
