@@ -96,7 +96,7 @@ function submitQuiz() {
 
     if (!selected) {
       feedbackEl.textContent =
-        `Wrong option. The correct option is ${correctLetter}`;
+        `Wrong option. The correct option is ${correctLetter}.`;
       feedbackEl.className = "feedback wrong";
       return;
     }
