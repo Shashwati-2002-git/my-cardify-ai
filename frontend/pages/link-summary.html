@@ -42,16 +42,29 @@
       <div class="right-panel">
         <button onclick="goToCardify()">Cardify</button>
         <button onclick="goToQuiz()">Take a Quiz</button>
-        <button>Save</button>
+        <button onclick="openSaveDialog()">Save</button>
       </div>
 
     </div>
   </main>
 
+  <div id="saveDialog" class="save-dialog hidden">
+    <div class="dialog-box">
+      <h3>Name your summary</h3>
+      <input type="text" id="summaryTitle" placeholder="Summary title">
+
+      <div class="dialog-actions">
+        <button onclick="confirmSave()">Save</button>
+        <button onclick="closeSaveDialog()">Cancel</button>
+      </div>
+    </div>
+  </div>
+
   <div id="footer"></div>
 
   <script src="/js/include.js"></script>
   <script src="/js/link-summary.js"></script>
+  <script type="module" src="/js/saveSummary.js"></script>
 
 </body>
 </html>

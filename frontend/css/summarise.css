@@ -160,3 +160,113 @@ body {
 .send-btn:hover {
   background-color: #2f3a1a;
 }
+
+/* Overlay */
+.save-dialog {
+  position: fixed;
+  inset: 0;
+  background: rgba(24, 34, 24, 0.55); /* olive-tinted overlay */
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+}
+
+.save-dialog.hidden {
+  display: none;
+}
+
+/* Dialog box */
+.dialog-box {
+  background: #f8faf7; /* soft off-white with green tint */
+  padding: 24px;
+  width: 340px;
+  border-radius: 14px;
+  border: 1px solid #d6e2d0;
+  box-shadow: 0 20px 45px rgba(45, 72, 45, 0.25);
+  animation: dialogFadeIn 0.25s ease;
+}
+
+/* Title */
+.dialog-box h3 {
+  margin: 0 0 14px;
+  font-size: 18px;
+  font-weight: 600;
+  color: #2f4f2f; /* dark olive */
+  text-align: center;
+}
+
+/* Input */
+.dialog-box input {
+  width: 100%;
+  padding: 10px 12px;
+  border-radius: 8px;
+  border: 1px solid #b7c9b1;
+  background: #ffffff;
+  font-size: 14px;
+  color: #2f3e2f;
+  outline: none;
+  transition: border 0.2s ease, box-shadow 0.2s ease;
+}
+
+.dialog-box input::placeholder {
+  color: #8fa38f;
+}
+
+.dialog-box input:focus {
+  border-color: #6b8e23; /* olive green */
+  box-shadow: 0 0 0 3px rgba(107, 142, 35, 0.25);
+}
+
+/* Actions */
+.dialog-actions {
+  display: flex;
+  gap: 12px;
+  margin-top: 18px;
+}
+
+/* Buttons */
+.dialog-actions button {
+  flex: 1;
+  padding: 10px 0;
+  border-radius: 8px;
+  font-size: 14px;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.1s ease;
+}
+
+/* Save button */
+.dialog-actions button:first-child {
+  background: linear-gradient(135deg, #6b8e23, #556b2f);
+  color: #ffffff;
+}
+
+.dialog-actions button:first-child:hover {
+  background: linear-gradient(135deg, #5f7f1f, #4b6029);
+  transform: translateY(-1px);
+}
+
+/* Cancel button */
+.dialog-actions button:last-child {
+  background: #e3eadf;
+  color: #3a4a3a;
+}
+
+.dialog-actions button:last-child:hover {
+  background: #d2dccd;
+}
+
+/* Animation */
+@keyframes dialogFadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}

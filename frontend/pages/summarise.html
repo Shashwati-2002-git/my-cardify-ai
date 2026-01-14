@@ -48,9 +48,22 @@
     <div class="right-panel">
         <button onclick="goToCardify()">Cardify</button>
         <button onclick="goToQuiz()">Take a Quiz</button>
-        <button>Save</button>
+        <button onclick="openSaveDialog()">Save</button>
     </div>
 
+    </div>
+
+
+    <div id="saveDialog" class="save-dialog hidden">
+        <div class="dialog-box">
+            <h3>Name your summary</h3>
+            <input type="text" id="summaryTitle" placeholder="Summary title">
+
+            <div class="dialog-actions">
+            <button onclick="confirmSave()">Save</button>
+            <button onclick="closeSaveDialog()">Cancel</button>
+            </div>
+        </div>
     </div>
 
     <!-- Footer -->
@@ -58,6 +71,7 @@
 
     <script src="../js/include.js"></script>
     <script src="../js/summarise.js"></script>
+    <script type="module" src="../js/saveSummary.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/3.11.174/pdf.min.js"></script>
     <script>
         pdfjsLib.GlobalWorkerOptions.workerSrc =
