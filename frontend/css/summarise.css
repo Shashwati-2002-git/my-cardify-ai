@@ -12,7 +12,6 @@ body {
     box-sizing: border-box;
 }
 
-/* LEFT SECTION */
 .left-panel {
     width: 20%;
     background-color: #9cab7d;
@@ -40,7 +39,6 @@ body {
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
 
-/* MIDDLE SECTION */
 .middle-panel {
     width: 60%;
     display: flex;
@@ -92,7 +90,6 @@ body {
     color: #555;
 }
 
-/* RIGHT SECTION */
 .right-panel {
     width: 20%;
     background-color: #9cab7d;
@@ -169,18 +166,18 @@ body {
   outline: none;
   font-size: 16px;
   background: transparent;
-  color: #2f3a1f; /* dark olive text */
+  color: #2f3a1f;
   pointer-events: auto;
 }
 
 .link-label input::placeholder {
-  color: #8a8f7a; /* visible placeholder */
+  color: #8a8f7a; 
   opacity: 1;
 }
 
 .send-btn {
-  background-color: #3e4b23; /* dark olive green */
-  color: white;
+  background-color: #3e4b23;
+  color: white; 
   border: none;
   padding: 8px 16px;
   border-radius: 14px;
@@ -196,7 +193,7 @@ body {
 .save-dialog {
   position: fixed;
   inset: 0;
-  background: rgba(24, 34, 24, 0.55); /* olive-tinted overlay */
+  background: rgba(24, 34, 24, 0.55); 
   backdrop-filter: blur(4px);
   display: flex;
   align-items: center;
@@ -208,9 +205,9 @@ body {
   display: none;
 }
 
-/* Dialog box */
+
 .dialog-box {
-  background: #f8faf7; /* soft off-white with green tint */
+  background: #f8faf7; 
   padding: 24px;
   width: 340px;
   border-radius: 14px;
@@ -219,16 +216,14 @@ body {
   animation: dialogFadeIn 0.25s ease;
 }
 
-/* Title */
 .dialog-box h3 {
   margin: 0 0 14px;
   font-size: 18px;
   font-weight: 600;
-  color: #2f4f2f; /* dark olive */
+  color: #2f4f2f; 
   text-align: center;
 }
 
-/* Input */
 .dialog-box input {
   width: 100%;
   padding: 10px 12px;
@@ -246,18 +241,16 @@ body {
 }
 
 .dialog-box input:focus {
-  border-color: #6b8e23; /* olive green */
+  border-color: #6b8e23;
   box-shadow: 0 0 0 3px rgba(107, 142, 35, 0.25);
 }
 
-/* Actions */
 .dialog-actions {
   display: flex;
   gap: 12px;
   margin-top: 18px;
 }
 
-/* Buttons */
 .dialog-actions button {
   flex: 1;
   padding: 10px 0;
@@ -269,7 +262,6 @@ body {
   transition: background-color 0.2s ease, transform 0.1s ease;
 }
 
-/* Save button */
 .dialog-actions button:first-child {
   background: linear-gradient(135deg, #6b8e23, #556b2f);
   color: #ffffff;
@@ -280,7 +272,6 @@ body {
   transform: translateY(-1px);
 }
 
-/* Cancel button */
 .dialog-actions button:last-child {
   background: #e3eadf;
   color: #3a4a3a;
@@ -290,7 +281,6 @@ body {
   background: #d2dccd;
 }
 
-/* Animation */
 @keyframes dialogFadeIn {
   from {
     opacity: 0;

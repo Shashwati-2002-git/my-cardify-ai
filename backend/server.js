@@ -43,7 +43,6 @@ app.post("/api/text-summary", textSummary);
 app.use("/api/link-summary", linkSummaryRoutes);
 app.use("/api/quiz", quizRoutes);
 app.use("/api/chatbot", chatbotRoutes);
-// app.use("/api/scrape", scrapeRoutes); // add other APIs similarly
 
 // Serve HTML pages
 const pagesPath = path.join(__dirname, "../frontend/pages");

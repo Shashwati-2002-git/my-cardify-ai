@@ -1,5 +1,5 @@
 body {
-  background-color: #e6eddc; /* light olive */
+  background-color: #e6eddc;
   font-family: Arial, sans-serif;
 }
 
@@ -21,7 +21,7 @@ body {
 }
 
 .quiz-box {
-  background-color: #3b4f2f; /* dark olive */
+  background-color: #3b4f2f;
   color: white;
   padding: 20px;
   border-radius: 18px;

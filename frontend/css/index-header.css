@@ -1,6 +1,5 @@
-/* Header Styling */
 .site-header {
-  background-color: #3e4b23; /* dark olive green */
+  background-color: #3e4b23; 
   color: white;
   padding: 12px 24px;
   display: flex;
@@ -36,7 +35,6 @@
   position: relative;
 }
 
-/* Dropdown menu */
 .profile-menu {
   position: absolute;
   top: 30px;

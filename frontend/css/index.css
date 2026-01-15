@@ -1,4 +1,3 @@
-/* Page Reset & Background */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
@@ -10,7 +9,6 @@ body {
   );
 }
 
-/* Main Section */
 .main-content {
   display: flex;
   flex-direction: column;
@@ -18,7 +16,6 @@ body {
   padding: 50px 0;
 }
 
-/* Image Slider */
 .slider-container {
   width: 100%;
   height: 450px;
@@ -41,7 +38,6 @@ body {
   opacity: 1;
 }
 
-/* Feature Cards Section */
 .feature-cards {
   display: flex;
   gap: 24px;
@@ -51,7 +47,7 @@ body {
 }
 
 .feature-card {
-  background-color: #3e4b23; /* dark olive green */
+  background-color: #3e4b23; 
   color: white;
   padding: 22px;
   border-radius: 16px;
@@ -75,7 +71,6 @@ body {
   line-height: 1.5;
 }
 
-/* Call-to-Action Button */
 .cta-button {
   margin-top: 45px;
   background-color: #3e4b23;
