@@ -1,6 +1,16 @@
 const summaryList = document.getElementById("summaryList");
 const textInput = document.getElementById("textInput");
 
+function syncSummaryToLocalStorage() {
+  const points = Array.from(
+    summaryList.querySelectorAll("li")
+  )
+    .map(li => li.textContent.trim())
+    .filter(Boolean);
+
+  localStorage.setItem("cardifyPoints", JSON.stringify(points));
+}
+
 async function sendText() {
   const text = textInput.value.trim();
   if (!text) {
@@ -33,12 +43,20 @@ async function sendText() {
         li.textContent = point.replace(/^[-•*]/, "").trim();
         summaryList.appendChild(li);
       });
-
+      syncSummaryToLocalStorage();
   } catch (err) {
     console.error(err);
     summaryList.innerHTML = "<li>Error while summarising text.</li>";
   }
 }
+
+// Send text on Enter key press
+textInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault(); // prevent accidental submit
+    sendText();
+  }
+});
 
 function goToCardify() {
   const points = Array.from(document.querySelectorAll("#summaryList li"))

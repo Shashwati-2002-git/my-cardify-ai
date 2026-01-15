@@ -84,9 +84,11 @@ body {
   font-size: 18px;
   border-radius: 30px;
   text-decoration: none;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .cta-button:hover {
   background-color: #2f3a1a;
+  transform: scale(1.08);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }

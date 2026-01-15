@@ -5,6 +5,16 @@ const summaryList = document.getElementById("summaryList");
 
 let uploadedText = "";
 
+function syncSummaryToLocalStorage() {
+  const points = Array.from(
+    summaryList.querySelectorAll("li")
+  )
+    .map(li => li.textContent.trim())
+    .filter(Boolean);
+
+  localStorage.setItem("cardifyPoints", JSON.stringify(points));
+}
+
 function triggerUpload() {
   fileInput.click();
 }
@@ -77,12 +87,25 @@ async function summariseText(text) {
         li.textContent = point.replace(/^[-•*]/, "").trim();
         summaryList.appendChild(li);
       });
-
+      syncSummaryToLocalStorage();
   } catch (err) {
     summaryList.innerHTML = "<li>Error while summarising.</li>";
     console.error(err);
   }
 }
+
+// Send document on Enter key (after file upload)
+document.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    // Prevent accidental submits
+    e.preventDefault();
+
+    // Only send if a document is uploaded and not empty
+    if (uploadedText && uploadedText.trim()) {
+      sendDocument();
+    }
+  }
+});
 
 // Navigation functions
 function goToCardify() {

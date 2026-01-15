@@ -34,16 +34,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "/quiz";
   });
 
-  // Save points locally
-  saveBtn.addEventListener("click", () => {
-    if (!points.length) {
-      alert("No points to save!");
-      return;
-    }
-    localStorage.setItem("cardifyPoints", JSON.stringify(points));
-    alert("Points saved locally!");
-  });
-
   // Clear all cards
   clearBtn.addEventListener("click", () => {
     if (!points.length) return;

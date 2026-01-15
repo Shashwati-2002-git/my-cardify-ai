@@ -9,6 +9,16 @@ import {
   onAuthStateChanged
 } from "https://www.gstatic.com/firebasejs/12.7.0/firebase-auth.js";
 
+function syncPointsToLocalStorage() {
+  const points = Array.from(
+    summaryList.querySelectorAll("li") // or wherever your points are displayed
+  )
+    .map(li => li.textContent.trim())
+    .filter(Boolean);
+
+  localStorage.setItem("cardifyPoints", JSON.stringify(points));
+}
+
 // ----------------------------
 // Save dialog functions
 // ----------------------------
@@ -21,6 +31,7 @@ function closeSaveDialog() {
 }
 
 async function confirmSave() {
+  syncPointsToLocalStorage();
   const title = document.getElementById("summaryTitle").value.trim();
   if (!title) {
     alert("Please enter a title");
@@ -56,6 +67,22 @@ async function confirmSave() {
     }
   });
 }
+
+// Submit save dialog on Enter key
+document.addEventListener("keydown", (e) => {
+  const dialog = document.getElementById("saveDialog");
+  const titleInput = document.getElementById("summaryTitle");
+
+  // Only trigger when dialog is open AND input is focused
+  if (
+    !dialog.classList.contains("hidden") &&
+    document.activeElement === titleInput &&
+    e.key === "Enter"
+  ) {
+    e.preventDefault();
+    confirmSave();
+  }
+});
 
 // Make functions available to HTML
 window.openSaveDialog = openSaveDialog;

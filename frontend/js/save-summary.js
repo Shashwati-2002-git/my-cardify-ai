@@ -137,6 +137,34 @@ async function confirmDelete() {
 }
 
 /* ----------------------------
+   Enter key handling for dialogs
+---------------------------- */
+document.addEventListener("keydown", (e) => {
+  const renameDialog = document.getElementById("renameDialog");
+  const deleteDialog = document.getElementById("deleteDialog");
+  const renameInput = document.getElementById("newSummaryTitle");
+
+  // ENTER → Rename (only if rename dialog is open & input focused)
+  if (
+    e.key === "Enter" &&
+    !renameDialog.classList.contains("hidden") &&
+    document.activeElement === renameInput
+  ) {
+    e.preventDefault();
+    confirmRename();
+  }
+
+  // ENTER → Delete (only if delete dialog is open)
+  if (
+    e.key === "Enter" &&
+    !deleteDialog.classList.contains("hidden")
+  ) {
+    e.preventDefault();
+    confirmDelete();
+  }
+});
+
+/* ----------------------------
    Expose to HTML
 ---------------------------- */
 window.cardifyCurrent = cardifyCurrent;

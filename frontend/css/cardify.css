@@ -13,15 +13,21 @@ body {
 /* Main Layout */
 .cardify-container {
   display: flex;
-  justify-content: center;
   align-items: flex-start;
-  gap: 30px;
   padding: 40px;
+  position: relative;
+}
+
+.cards-center {
+  max-width: 900px;      /* controls card column width */
+  margin: 0 auto;        /* 👈 TRUE CENTER */
 }
 
 /* Cards */
 .cards-wrapper {
   width: 55%;
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   flex-direction: column;
   gap: 20px;
@@ -51,10 +57,13 @@ body {
 
 /* Action Buttons (Right side, top aligned) */
 .actions-panel {
+  position: fixed;
+  top: 140px;
+  right: 120px;           /* distance from right edge */
   display: flex;
   flex-direction: column;
   gap: 14px;
-  margin-top: 10px;
+  z-index: 1000;
 }
 
 .action-btn {
@@ -65,9 +74,11 @@ body {
   font-size: 15px;
   border-radius: 22px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .action-btn:hover {
   background-color: #2f3a1a;
+  transform: scale(1.08);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }

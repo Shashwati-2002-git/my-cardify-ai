@@ -3,6 +3,16 @@ const summaryList = document.getElementById("summaryList");
 const linkInput = document.getElementById("linkInput");
 const sendBtn = document.querySelector(".send-btn");
 
+function syncSummaryToLocalStorage() {
+  const points = Array.from(
+    summaryList.querySelectorAll("#summaryList li")
+  )
+    .map(li => li.textContent.trim())
+    .filter(Boolean);
+
+  localStorage.setItem("cardifyPoints", JSON.stringify(points));
+}
+
 async function sendLink() {
   const link = linkInput.value.trim();
   if (!link) {
@@ -36,7 +46,7 @@ async function sendLink() {
       li.textContent = point;
       summaryList.appendChild(li);
     });
-
+    syncSummaryToLocalStorage();
   } catch (err) {
     console.error(err);
     summaryList.innerHTML = "<li>Error processing link</li>";
@@ -44,6 +54,14 @@ async function sendLink() {
     sendBtn.disabled = false;
   }
 }
+
+// Send link on Enter key press
+linkInput.addEventListener("keydown", (e) => {
+  if (e.key === "Enter") {
+    e.preventDefault(); // prevent form-like submit behavior
+    sendLink();
+  }
+});
 
 // Navigate to Cardify page with saved points
 function goToCardify() {

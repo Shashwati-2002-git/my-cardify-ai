@@ -90,11 +90,13 @@ body {
   border: none;
   border-radius: 22px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .login-btn:hover {
   background-color: #2f3a1a;
+  transform: scale(1.08);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
 
 /* Secondary Buttons */
@@ -106,11 +108,14 @@ body {
   border-radius: 22px;
   cursor: pointer;
   font-size: 15px;
+  transition: background-color 0.3s ease, transform 0.25s ease, box-shadow 0.25s ease;
 }
 
 .secondary-btn:hover {
   background-color: #3e4b23;
   color: white;
+  transform: scale(1.08);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
 
 /* Forgot Password */
