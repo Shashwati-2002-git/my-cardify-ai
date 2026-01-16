@@ -79,3 +79,81 @@ body {
   font-size: 18px;
   margin-bottom: 100px;
 }
+
+@media (max-width: 1024px) {
+  .quiz-container {
+    padding: 15px;
+    margin: 30px auto;
+  }
+
+  .submit-btn {
+    padding: 10px 26px;
+    font-size: 15px;
+  }
+
+  .score-box {
+    font-size: 17px;
+    padding: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .quiz-container {
+    width: 90%;
+    margin: 20px auto;
+    padding: 12px;
+  }
+
+  .quiz-title {
+    font-size: 22px;
+  }
+
+  .quiz-box {
+    padding: 16px;
+  }
+
+  .quiz-box label {
+    font-size: 14px;
+  }
+
+  .submit-btn {
+    padding: 10px 24px;
+    font-size: 14px;
+  }
+
+  .score-box {
+    font-size: 16px;
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  .quiz-container {
+    width: 95%;
+    margin: 15px auto;
+    padding: 10px;
+  }
+
+  .quiz-title {
+    font-size: 20px;
+  }
+
+  .quiz-box {
+    padding: 14px;
+  }
+
+  .quiz-box label {
+    font-size: 13px;
+  }
+
+  .submit-btn {
+    padding: 8px 20px;
+    font-size: 13px;
+  }
+
+  .score-box {
+    font-size: 15px;
+    padding: 8px;
+    margin-bottom: 80px;
+  }
+}

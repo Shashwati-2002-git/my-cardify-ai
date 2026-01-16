@@ -130,3 +130,106 @@ body {
   font-weight: 500;
   text-align: center;
 }
+
+@media (max-width: 1024px) {
+  .login-image-section {
+    width: 50%;
+  }
+
+  .login-form-section {
+    width: 45%;
+  }
+
+  .image-placeholder {
+    width: 420px;
+    height: 420px;
+  }
+
+  .login-form-section,
+  .login-image-section {
+    height: 420px;
+  }
+}
+
+@media (max-width: 768px) {
+  .login-container {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .login-image-section {
+    display: none;
+  }
+
+  .login-form-section {
+    width: 90%;
+    height: auto;
+    padding: 30px 20px;
+  }
+
+  .login-form input {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .login-form input {
+    font-size: 15px;
+    padding: 10px 12px;
+  }
+
+  .login-btn {
+    font-size: 16px;
+    padding: 11px;
+  }
+
+  .secondary-btn {
+    font-size: 14px;
+    padding: 9px;
+  }
+
+  .link-btn {
+    font-size: 13px;
+  }
+}
+
+/* Extra small screens - very small phones */
+@media (max-width: 400px) {
+  .login-form-section {
+    width: 95%;
+    padding: 20px 15px;
+    border-radius: 16px;
+  }
+
+  .login-form input {
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  .login-btn {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  .secondary-btn {
+    font-size: 13px;
+    padding: 8px;
+  }
+
+  .link-btn {
+    font-size: 12px;
+  }
+
+  .success-text {
+    font-size: 13px;
+  }
+}
+
+/* Center forms vertically on short screens */
+@media (max-height: 600px) {
+  .login-container {
+    align-items: flex-start;
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+}

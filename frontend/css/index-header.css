@@ -58,3 +58,51 @@
   background-color: #f2f2f2;
   border-radius: 8px;
 }
+
+@media (max-width: 768px) {
+  .site-header {
+    padding: 10px 16px;
+    flex-wrap: nowrap;
+  }
+
+  .logo {
+    width: 34px;
+    height: 34px;
+  }
+
+  .site-name {
+    font-size: 18px;
+  }
+
+  .profile-pic {
+    width: 34px;
+    height: 34px;
+  }
+
+  .logo-section {
+    gap: 6px;
+  }
+
+  .profile-menu {
+    top: 40px;
+    right: 0;
+  }
+}
+
+@media (max-width: 480px) {
+  .site-name {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .logo-section {
+    max-width: 70%;
+  }
+
+  .profile-menu {
+    width: 110px;
+    right: -4px;
+  }
+}

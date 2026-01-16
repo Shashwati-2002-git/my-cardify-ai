@@ -73,3 +73,50 @@
 #chatbot-send:hover {
   background: #2f4733;
 }
+
+@media (max-width: 768px) {
+  #chatbot-box {
+    width: 300px;
+    right: 20px;
+    bottom: 70px;
+  }
+
+  #chatbot-input {
+    width: 200px;
+    font-size: 14px;
+    padding: 8px 10px;
+  }
+
+  #chatbot-send {
+    padding: 8px 12px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  #chatbot-box {
+    width: 260px;
+    right: 15px;
+    bottom: 60px;
+  }
+
+  #chatbot-header {
+    font-size: 14px;
+    padding: 8px 12px;
+  }
+
+  #chatbot-input {
+    width: 160px;
+    font-size: 13px;
+    padding: 6px 8px;
+  }
+
+  #chatbot-send {
+    padding: 6px 10px;
+    font-size: 13px;
+  }
+
+  #chatbot-messages {
+    max-height: 200px;
+  }
+}
