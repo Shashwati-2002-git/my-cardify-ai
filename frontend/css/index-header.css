@@ -59,57 +59,67 @@
   border-radius: 8px;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 360px) {
   .site-header {
-    padding: 10px 16px;
-    flex-wrap: nowrap;
-    width: 100%; /* make header full width */
-    box-sizing: border-box; /* ensure padding doesn’t overflow */
+    padding: 6px 10px;
+    width: 100%;  /* full width */
+    box-sizing: border-box;
+  }
+
+  .logo-section {
+    gap: 4px;
+    max-width: 65%;
   }
 
   .logo {
-    width: 34px;
-    height: 34px;
+    width: 30px;
+    height: 30px;
   }
 
   .site-name {
-    font-size: 18px;
+    font-size: 14px;
   }
 
   .profile-pic {
-    width: 34px;
-    height: 34px;
-  }
-
-  .logo-section {
-    gap: 6px;
+    width: 30px;
+    height: 30px;
   }
 
   .profile-menu {
-    top: 40px;
-    right: 0;
+    top: 36px;
+    right: -2px;
+    width: 100px;
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 320px) {
   .site-header {
-    width: 100%; /* make header full width */
-    padding: 8px 12px;
-  }
-
-  .site-name {
-    font-size: 16px;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+    padding: 4px 8px;
+    width: 100%; 
+    flex-wrap: wrap;
   }
 
   .logo-section {
-    max-width: 70%;
+    max-width: 60%;
+  }
+
+  .logo {
+    width: 28px;
+    height: 28px;
+  }
+
+  .site-name {
+    font-size: 13px;
+  }
+
+  .profile-pic {
+    width: 28px;
+    height: 28px;
   }
 
   .profile-menu {
-    width: 110px;
-    right: -4px;
+    top: 34px;
+    right: 0;
+    width: 95px;
   }
 }
