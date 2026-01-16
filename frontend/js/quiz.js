@@ -115,12 +115,4 @@ function submitQuiz() {
   scoreBox.textContent = `Total Score: ${score} / 10`;
 }
 
-// Submit quiz on Enter key press
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    e.preventDefault(); // prevent accidental form behavior
-    submitQuiz();
-  }
-});
-
 window.submitQuiz = submitQuiz;

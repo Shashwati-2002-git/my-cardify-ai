@@ -94,19 +94,6 @@ async function summariseText(text) {
   }
 }
 
-// Send document on Enter key (after file upload)
-document.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    // Prevent accidental submits
-    e.preventDefault();
-
-    // Only send if a document is uploaded and not empty
-    if (uploadedText && uploadedText.trim()) {
-      sendDocument();
-    }
-  }
-});
-
 // Navigation functions
 function goToCardify() {
   const points = Array.from(document.querySelectorAll("#summaryList li"))

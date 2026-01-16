@@ -50,14 +50,6 @@ async function sendText() {
   }
 }
 
-// Send text on Enter key press
-textInput.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    e.preventDefault(); // prevent accidental submit
-    sendText();
-  }
-});
-
 function goToCardify() {
   const points = Array.from(document.querySelectorAll("#summaryList li"))
     .map(li => li.textContent);

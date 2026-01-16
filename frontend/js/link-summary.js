@@ -1,11 +1,10 @@
-// frontend/js/link-summary.js
 const summaryList = document.getElementById("summaryList");
 const linkInput = document.getElementById("linkInput");
 const sendBtn = document.querySelector(".send-btn");
 
 function syncSummaryToLocalStorage() {
   const points = Array.from(
-    summaryList.querySelectorAll("#summaryList li")
+    summaryList.querySelectorAll("li")
   )
     .map(li => li.textContent.trim())
     .filter(Boolean);
@@ -24,14 +23,12 @@ async function sendLink() {
   sendBtn.disabled = true;
 
   try {
-    // ✅ Updated API URL to match backend route
     const response = await fetch("/api/link-summary", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ url: link })
     });
 
-    // Parse JSON response
     const data = await response.json();
 
     if (!response.ok || data.error) {
@@ -39,7 +36,6 @@ async function sendLink() {
       return;
     }
 
-    // Clear previous summary and add new points
     summaryList.innerHTML = "";
     data.summary.forEach(point => {
       const li = document.createElement("li");
@@ -55,22 +51,12 @@ async function sendLink() {
   }
 }
 
-// Send link on Enter key press
-linkInput.addEventListener("keydown", (e) => {
-  if (e.key === "Enter") {
-    e.preventDefault(); // prevent form-like submit behavior
-    sendLink();
-  }
-});
-
-// Navigate to Cardify page with saved points
 function goToCardify() {
   const points = Array.from(summaryList.children).map(li => li.textContent);
   localStorage.setItem("cardifyPoints", JSON.stringify(points));
   window.location.href = "/cardify";
 }
 
-// Navigate to Quiz page
 function goToQuiz() {
   const points = Array.from(document.querySelectorAll("#summaryList li"))
     .map(li => li.textContent.trim())
